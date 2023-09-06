@@ -53,6 +53,7 @@ const Products = () => {
     <>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
+          <h2 className='text-3xl  mb-10'>Featured Categories</h2>
           <FilterButtons handleClick={handleClick} />
           <div className="flex flex-wrap -m-4">
             {products.map((product) => {

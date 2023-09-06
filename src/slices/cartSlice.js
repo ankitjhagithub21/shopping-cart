@@ -1,7 +1,21 @@
+
+
 import { createSlice } from '@reduxjs/toolkit'
 import {toast} from "react-hot-toast"
+
+const localStorageKey = 'cartData';
+
+export const saveCartToLocalStorage = (cartData) => {
+  localStorage.setItem(localStorageKey, JSON.stringify(cartData));
+};
+
+export const loadCartFromLocalStorage = () => {
+  const cartData = localStorage.getItem(localStorageKey);
+  return cartData ? JSON.parse(cartData) : [];
+};
+
 const initialState = {
-  cart: [],
+  cart: loadCartFromLocalStorage(),
 }
 
 export const cartSlice = createSlice({
@@ -17,14 +31,16 @@ export const cartSlice = createSlice({
         state.cart.push({...action.payload,qty:1})
         toast.success("Product added")
       }
-      
+      saveCartToLocalStorage(state.cart);
     },
     removeFromCart:(state,action) =>{
       state.cart= state.cart.filter(item=>item.id!==action.payload)
       toast.success("Product removed")
+      saveCartToLocalStorage(state.cart);
     },
     increaseQuantity:(state,action) =>{
       state.cart = state.cart.map((item)=>item.id===action.payload ? {...item,qty:item.qty+1} : item)
+      saveCartToLocalStorage(state.cart);
     },
     decreaseQuantity:(state,action) =>{
        
@@ -36,6 +52,7 @@ export const cartSlice = createSlice({
         }
         return item
       })
+      saveCartToLocalStorage(state.cart);
     }
    
     

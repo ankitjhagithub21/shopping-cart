@@ -28,7 +28,7 @@ const SingleProduct = () => {
   },[])
 
   if (isloading) {
-    return <div className="flex flex-wrap container" style={{minHeight:"90vh"}}>
+    return <div className="flex flex-wrap container">
       <Loading className="lg:w-1/2 w-full" />
       <Loading className="lg:w-1/2 w-full" />
     </div>

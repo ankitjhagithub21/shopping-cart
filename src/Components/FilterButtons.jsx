@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import categories from '../api/categories'
 
 const FilterButtons = ({ handleClick }) => {
-  const [activeButton, setActiveButton] = useState('All'); // Initialize with 'All' as the default active button
+  const [activeButton, setActiveButton] = useState('All'); 
 
   const handleButtonClick = (text) => {
     setActiveButton(text); // Set the clicked button as active
@@ -10,7 +10,7 @@ const FilterButtons = ({ handleClick }) => {
   };
 
   return (
-    <div className='flex flex-wrap gap-10 align-center justify-center mb-20'>
+    <div className='flex gap-5 mb-20 overflow-scroll'>
       {categories.map((btn) => (
         <button
           className={`border py-2 px-5 hover:bg-slate-950 hover:text-white ${
