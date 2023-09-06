@@ -19,6 +19,7 @@ const SingleProduct = () => {
       const data = await res.json()
       setProduct(data)
       setIsLoading(false)
+      
      }catch(err){
       console.log(err)
      }

@@ -1,6 +1,6 @@
 # Shopping Cart App
 
-This is a simple shopping cart application built with React, Vite, Tailwind CSS, Redux Toolkit, React Hot Toast, and localStorage. It allows users to browse a list of products, filter products according category, add them to their cart, adjust quantities, and view a summary of their cart.
+This is a simple shopping cart application built with React, Vite, Tailwind CSS, Redux Toolkit, React Hot Toast, react-content-loader and localStorage. It allows users to browse a list of products, filter products according category, add them to their cart, adjust quantities, and view a summary of their cart.
 
 ## Features
 
@@ -8,12 +8,14 @@ This is a simple shopping cart application built with React, Vite, Tailwind CSS,
 - Add products to the shopping cart.
 - Adjust product quantities in the cart.
 - View a summary of the items in the cart.
+- Filter products according category
 - Persist the cart data using `localStorage`.
 - Display toast notifications for cart actions using React Hot Toast.
 
+
 ## Technologies Used
 
-- React
+- [React] (https://react.dev/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
